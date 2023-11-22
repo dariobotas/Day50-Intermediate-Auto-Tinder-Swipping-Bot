@@ -1,4 +1,19 @@
 [[package]]
+name = "attrs"
+version = "23.1.0"
+description = "Classes Without Boilerplate"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+cov = ["attrs", "coverage[toml] (>=5.3)"]
+dev = ["attrs", "pre-commit"]
+docs = ["furo", "myst-parser", "sphinx", "sphinx-notfound-page", "sphinxcontrib-towncrier", "towncrier", "zope-interface"]
+tests = ["attrs", "zope-interface"]
+tests-no-zope = ["cloudpickle", "hypothesis", "mypy (>=1.1.1)", "pympler", "pytest-mypy-plugins", "pytest-xdist", "pytest (>=4.3.0)"]
+
+[[package]]
 name = "blinker"
 version = "1.6.2"
 description = "Fast, simple object-to-object and broadcast signaling"
@@ -40,7 +55,7 @@ msgpack = ["msgpack-python (>=0.5,<0.6)"]
 name = "certifi"
 version = "2023.7.22"
 description = "Python package for providing Mozilla's CA Bundle."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -48,7 +63,7 @@ python-versions = ">=3.6"
 name = "cffi"
 version = "1.15.1"
 description = "Foreign Function Interface for Python calling C code."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -59,7 +74,7 @@ pycparser = "*"
 name = "charset-normalizer"
 version = "3.2.0"
 description = "The Real First Universal Charset Detector. Open, modern and actively maintained alternative to Chardet."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7.0"
 
@@ -160,10 +175,21 @@ optional = false
 python-versions = ">=3.6"
 
 [[package]]
+name = "exceptiongroup"
+version = "1.2.0"
+description = "Backport of PEP 654 (exception groups)"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+test = ["pytest (>=6)"]
+
+[[package]]
 name = "filelock"
 version = "3.12.2"
 description = "A platform independent file lock."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -192,6 +218,22 @@ async = ["asgiref (>=3.2)"]
 dotenv = ["python-dotenv"]
 
 [[package]]
+name = "geckodriver-autoinstaller"
+version = "0.1.0"
+description = "Automatically install geckodriver that supports the currently installed version of chrome."
+category = "main"
+optional = false
+python-versions = ">=3"
+
+[[package]]
+name = "h11"
+version = "0.14.0"
+description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "html5lib"
 version = "1.1"
 description = "HTML parser based on the WHATWG HTML specification"
@@ -213,7 +255,7 @@ lxml = ["lxml"]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -314,6 +356,42 @@ MarkupSafe = ">=2.0"
 i18n = ["Babel (>=2.7)"]
 
 [[package]]
+name = "jsoncodable"
+version = "0.1.7"
+description = "to_dict"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+jsonpickle = ">=2.0.0"
+noraise = ">=0.0.16"
+
+[[package]]
+name = "jsonpickle"
+version = "3.0.2"
+description = "Python library for serializing any arbitrary object graph into JSON"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8 (>=1.1.1)", "pytest-black-multipy", "pytest-cov", "ecdsa", "feedparser", "gmpy2", "numpy", "pandas", "pymongo", "scikit-learn", "sqlalchemy"]
+"testing.libs" = ["simplejson", "ujson"]
+
+[[package]]
+name = "k-selenium-cookies"
+version = "0.0.4"
+description = "k_selenium_cookies"
+category = "main"
+optional = false
+python-versions = ">=3.4"
+
+[package.dependencies]
+tldextract = ">=3.1.0"
+
+[[package]]
 name = "keyring"
 version = "24.2.0"
 description = "Store and access your passwords safely."
@@ -333,6 +411,18 @@ SecretStorage = {version = ">=3.2", markers = "sys_platform == \"linux\""}
 completion = ["shtab"]
 docs = ["sphinx (>=3.5)", "jaraco.packaging (>=9)", "rst.linker (>=1.9)", "furo", "sphinx-lint", "jaraco.tidelift (>=1.4)"]
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=1.3)", "pytest-ruff", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)"]
+
+[[package]]
+name = "kproxy"
+version = "0.0.1"
+description = "kproxy"
+category = "main"
+optional = false
+python-versions = ">=3.4"
+
+[package.dependencies]
+jsoncodable = ">=0.1.7"
+noraise = ">=0.0.16"
 
 [[package]]
 name = "lockfile"
@@ -367,6 +457,14 @@ optional = false
 python-versions = "*"
 
 [[package]]
+name = "noraise"
+version = "0.0.16"
+description = "noraise"
+category = "main"
+optional = false
+python-versions = ">=3.4"
+
+[[package]]
 name = "numpy"
 version = "1.24.4"
 description = "Fundamental package for array computing in Python"
@@ -375,10 +473,21 @@ optional = false
 python-versions = ">=3.8"
 
 [[package]]
+name = "outcome"
+version = "1.3.0.post0"
+description = "Capture the outcome of Python function calls."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+attrs = ">=19.2.0"
+
+[[package]]
 name = "packaging"
 version = "23.1"
 description = "Core utilities for Python packages"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -498,17 +607,17 @@ python-versions = "*"
 name = "pycparser"
 version = "2.21"
 description = "C parser in Python"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [[package]]
 name = "pyflakes"
-version = "2.5.0"
+version = "3.1.0"
 description = "passive checker of Python programs"
 category = "dev"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.8"
 
 [[package]]
 name = "pylev"
@@ -519,55 +628,75 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "python-lsp-jsonrpc"
+name = "pysocks"
+version = "1.7.1"
+description = "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
+name = "python-dotenv"
 version = "1.0.0"
+description = "Read key-value pairs from a .env file and set them as environment variables"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.extras]
+cli = ["click (>=5.0)"]
+
+[[package]]
+name = "python-lsp-jsonrpc"
+version = "1.1.2"
 description = "JSON RPC 2.0 server library"
 category = "dev"
 optional = false
-python-versions = "*"
+python-versions = ">=3.8"
 
 [package.dependencies]
 ujson = ">=3.0.0"
 
 [package.extras]
-test = ["coverage", "pytest-cov", "pytest", "pyflakes", "pycodestyle", "pylint"]
+test = ["pylint", "pycodestyle", "pyflakes", "pytest", "pytest-cov", "coverage"]
 
 [[package]]
 name = "python-lsp-server"
-version = "1.7.4"
+version = "1.9.0"
 description = "Python Language Server for the Language Server Protocol"
 category = "dev"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.8"
 
 [package.dependencies]
 docstring-to-markdown = "*"
-jedi = ">=0.17.2,<0.19.0"
+importlib-metadata = {version = ">=4.8.3", markers = "python_version < \"3.10\""}
+jedi = ">=0.17.2,<0.20.0"
 pluggy = ">=1.0.0"
-pyflakes = {version = ">=2.5.0,<3.1.0", optional = true, markers = "extra == \"pyflakes\""}
-python-lsp-jsonrpc = ">=1.0.0"
+pyflakes = {version = ">=3.1.0,<3.2.0", optional = true, markers = "extra == \"pyflakes\""}
+python-lsp-jsonrpc = ">=1.1.0,<2.0.0"
 rope = {version = ">1.2.0", optional = true, markers = "extra == \"rope\""}
 ujson = ">=3.0.0"
 whatthepatch = {version = ">=1.0.2,<2.0.0", optional = true, markers = "extra == \"yapf\""}
 yapf = {version = ">=0.33.0", optional = true, markers = "extra == \"yapf\""}
 
 [package.extras]
-all = ["autopep8 (>=1.6.0,<2.1.0)", "flake8 (>=5.0.0,<7)", "mccabe (>=0.7.0,<0.8.0)", "pycodestyle (>=2.9.0,<2.11.0)", "pydocstyle (>=6.3.0,<6.4.0)", "pyflakes (>=2.5.0,<3.1.0)", "pylint (>=2.5.0,<3)", "rope (>1.2.0)", "yapf (>=0.33.0)", "whatthepatch (>=1.0.2,<2.0.0)"]
+all = ["autopep8 (>=2.0.4,<2.1.0)", "flake8 (>=6.1.0,<7)", "mccabe (>=0.7.0,<0.8.0)", "pycodestyle (>=2.11.0,<2.12.0)", "pydocstyle (>=6.3.0,<6.4.0)", "pyflakes (>=3.1.0,<3.2.0)", "pylint (>=2.5.0,<3.1)", "rope (>1.2.0)", "yapf (>=0.33.0)", "whatthepatch (>=1.0.2,<2.0.0)"]
 autopep8 = ["autopep8 (>=1.6.0,<2.1.0)"]
-flake8 = ["flake8 (>=5.0.0,<7)"]
+flake8 = ["flake8 (>=6.1.0,<7)"]
 mccabe = ["mccabe (>=0.7.0,<0.8.0)"]
-pycodestyle = ["pycodestyle (>=2.9.0,<2.11.0)"]
+pycodestyle = ["pycodestyle (>=2.11.0,<2.12.0)"]
 pydocstyle = ["pydocstyle (>=6.3.0,<6.4.0)"]
-pyflakes = ["pyflakes (>=2.5.0,<3.1.0)"]
-pylint = ["pylint (>=2.5.0,<3)"]
+pyflakes = ["pyflakes (>=3.1.0,<3.2.0)"]
+pylint = ["pylint (>=2.5.0,<3.1)"]
 rope = ["rope (>1.2.0)"]
-test = ["pylint (>=2.5.0,<3)", "pytest", "pytest-cov", "coverage", "numpy", "pandas", "matplotlib", "pyqt5", "flaky"]
+test = ["pylint (>=2.5.0,<3.1)", "pytest", "pytest-cov", "coverage", "numpy", "pandas", "matplotlib", "pyqt5", "flaky"]
 websockets = ["websockets (>=10.3)"]
 yapf = ["yapf (>=0.33.0)", "whatthepatch (>=1.0.2,<2.0.0)"]
 
 [[package]]
 name = "pytoolconfig"
-version = "1.2.5"
+version = "1.2.6"
 description = "Python tool configuration"
 category = "dev"
 optional = false
@@ -579,10 +708,10 @@ platformdirs = {version = ">=1.4.4", optional = true, markers = "extra == \"glob
 tomli = {version = ">=2.0.1", markers = "python_version < \"3.11\""}
 
 [package.extras]
+validation = ["pydantic (>=1.7.4)"]
+global = ["platformdirs (>=1.4.4)"]
 doc = ["tabulate (>=0.8.9)", "sphinx (>=4.5.0)"]
 gendocs = ["sphinx (>=4.5.0)", "sphinx-autodoc-typehints (>=1.18.1)", "sphinx-rtd-theme (>=1.0.0)", "pytoolconfig"]
-global = ["platformdirs (>=1.4.4)"]
-validation = ["pydantic (>=1.7.4)"]
 
 [[package]]
 name = "pywin32-ctypes"
@@ -596,7 +725,7 @@ python-versions = ">=3.6"
 name = "requests"
 version = "2.31.0"
 description = "Python HTTP for Humans."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -609,6 +738,18 @@ urllib3 = ">=1.21.1,<3"
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
+
+[[package]]
+name = "requests-file"
+version = "1.5.1"
+description = "File transport adapter for Requests"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+requests = ">=1.0.0"
+six = "*"
 
 [[package]]
 name = "requests-toolbelt"
@@ -650,6 +791,50 @@ cryptography = ">=2.0"
 jeepney = ">=0.6"
 
 [[package]]
+name = "selenium"
+version = "4.15.2"
+description = ""
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+certifi = ">=2021.10.8"
+trio = ">=0.17,<1.0"
+trio-websocket = ">=0.9,<1.0"
+urllib3 = {version = ">=1.26,<3", extras = ["socks"]}
+
+[[package]]
+name = "selenium-browser"
+version = "0.0.15"
+description = "selenium_browser"
+category = "main"
+optional = false
+python-versions = ">=3.4"
+
+[package.dependencies]
+k-selenium-cookies = ">=0.0.4"
+kproxy = ">=0.0.1"
+noraise = ">=0.0.16"
+selenium = ">=4.0.0b4"
+xpath-utils = ">=0.0.3"
+
+[[package]]
+name = "selenium-firefox"
+version = "2.0.8"
+description = "selenium_firefox"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.dependencies]
+geckodriver-autoinstaller = ">=0.1.0"
+kproxy = ">=0.0.1"
+noraise = ">=0.0.16"
+selenium = ">=4.0.0"
+selenium-browser = ">=0.0.12"
+
+[[package]]
 name = "shellingham"
 version = "1.5.1"
 description = "Tool to Detect Surrounding Shell"
@@ -661,9 +846,42 @@ python-versions = ">=3.7"
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
+
+[[package]]
+name = "sniffio"
+version = "1.3.0"
+description = "Sniff out which async library your code is running under"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
+name = "sortedcontainers"
+version = "2.4.0"
+description = "Sorted Containers -- Sorted List, Sorted Dict, Sorted Set"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "tldextract"
+version = "5.1.1"
+description = "Accurately separates a URL's subdomain, domain, and public suffix, using the Public Suffix List (PSL). By default, this includes the public ICANN TLDs and their exceptions. You can optionally support the Public Suffix List's private domains as well."
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+filelock = ">=3.0.8"
+idna = "*"
+requests = ">=2.1.0"
+requests-file = ">=1.4"
+
+[package.extras]
+testing = ["black", "mypy", "pytest", "pytest-gitignore", "pytest-mock", "responses", "ruff", "tox", "types-filelock", "types-requests"]
 
 [[package]]
 name = "toml"
@@ -690,6 +908,36 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "trio"
+version = "0.23.1"
+description = "A friendly Python library for async concurrency and I/O"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[package.dependencies]
+attrs = ">=20.1.0"
+cffi = {version = ">=1.14", markers = "os_name == \"nt\" and implementation_name != \"pypy\""}
+exceptiongroup = {version = ">=1.0.0rc9", markers = "python_version < \"3.11\""}
+idna = "*"
+outcome = "*"
+sniffio = ">=1.3.0"
+sortedcontainers = "*"
+
+[[package]]
+name = "trio-websocket"
+version = "0.11.1"
+description = "WebSocket library for Trio"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+exceptiongroup = {version = "*", markers = "python_version < \"3.11\""}
+trio = ">=0.11"
+wsproto = ">=0.14"
+
+[[package]]
 name = "ujson"
 version = "5.8.0"
 description = "Ultra fast JSON encoder and decoder for Python"
@@ -701,9 +949,12 @@ python-versions = ">=3.8"
 name = "urllib3"
 version = "1.26.15"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, !=3.5.*"
+
+[package.dependencies]
+PySocks = {version = ">=1.5.6,<1.5.7 || >1.5.7,<2.0", optional = true, markers = "extra == \"socks\""}
 
 [package.extras]
 brotli = ["brotlicffi (>=0.8.0)", "brotli (>=1.0.9)", "brotlipy (>=0.6.0)"]
@@ -726,6 +977,30 @@ platformdirs = ">=3.9.1,<4"
 [package.extras]
 docs = ["furo (>=2023.5.20)", "proselint (>=0.13)", "sphinx-argparse (>=0.4)", "sphinx (>=7.0.1)", "sphinxcontrib-towncrier (>=0.2.1a0)", "towncrier (>=23.6)"]
 test = ["covdefaults (>=2.3)", "coverage-enable-subprocess (>=1)", "coverage (>=7.2.7)", "flaky (>=3.7)", "packaging (>=23.1)", "pytest-env (>=0.8.2)", "pytest-freezer (>=0.4.8)", "pytest-mock (>=3.11.1)", "pytest-randomly (>=3.12)", "pytest-timeout (>=2.1)", "pytest (>=7.4)", "setuptools (>=68)", "time-machine (>=2.10)"]
+
+[[package]]
+name = "webbot"
+version = "0.34"
+description = "Web Browser automation and testing library for python with more features and simpler api than selenium"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+selenium = "*"
+
+[[package]]
+name = "webdriver-manager"
+version = "4.0.1"
+description = "Library provides the way to automatically manage drivers for different browsers"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+packaging = "*"
+python-dotenv = "*"
+requests = "*"
 
 [[package]]
 name = "webencodings"
@@ -758,6 +1033,25 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "wsproto"
+version = "1.2.0"
+description = "WebSockets state-machine based protocol implementation"
+category = "main"
+optional = false
+python-versions = ">=3.7.0"
+
+[package.dependencies]
+h11 = ">=0.9.0,<1"
+
+[[package]]
+name = "xpath-utils"
+version = "0.0.3"
+description = "xpath_utils"
+category = "main"
+optional = false
+python-versions = ">=3.4"
+
+[[package]]
 name = "yapf"
 version = "0.40.1"
 description = "A formatter for Python code."
@@ -785,9 +1079,10 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-ena
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8.0,<3.9"
-content-hash = "b32dd48bb3735a465ba86f7b1603206438361f29b7e54109424489caf75386af"
+content-hash = "8c19b49b5cab8798d2079da8f03029a89300a9389e17d2f73cf961fc39ad754c"
 
 [metadata.files]
+attrs = []
 blinker = []
 cachecontrol = []
 cachy = []
@@ -803,8 +1098,11 @@ cryptography = []
 debugpy = []
 distlib = []
 docstring-to-markdown = []
+exceptiongroup = []
 filelock = []
 flask = []
+geckodriver-autoinstaller = []
+h11 = []
 html5lib = []
 idna = []
 importlib-metadata = []
@@ -814,12 +1112,18 @@ itsdangerous = []
 jedi = []
 jeepney = []
 jinja2 = []
+jsoncodable = []
+jsonpickle = []
+k-selenium-cookies = []
 keyring = []
+kproxy = []
 lockfile = []
 markupsafe = []
 more-itertools = []
 msgpack = []
+noraise = []
 numpy = []
+outcome = []
 packaging = []
 parso = []
 pastel = []
@@ -833,24 +1137,39 @@ ptyprocess = []
 pycparser = []
 pyflakes = []
 pylev = []
+pysocks = []
+python-dotenv = []
 python-lsp-jsonrpc = []
 python-lsp-server = []
 pytoolconfig = []
 pywin32-ctypes = []
 requests = []
+requests-file = []
 requests-toolbelt = []
 rope = []
 secretstorage = []
+selenium = []
+selenium-browser = []
+selenium-firefox = []
 shellingham = []
 six = []
+sniffio = []
+sortedcontainers = []
+tldextract = []
 toml = []
 tomli = []
 tomlkit = []
+trio = []
+trio-websocket = []
 ujson = []
 urllib3 = []
 virtualenv = []
+webbot = []
+webdriver-manager = []
 webencodings = []
 werkzeug = []
 whatthepatch = []
+wsproto = []
+xpath-utils = []
 yapf = []
 zipp = []
